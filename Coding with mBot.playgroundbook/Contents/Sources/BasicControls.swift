@@ -5,6 +5,7 @@ public class BasicCommands {
     public var mBot: MBot
     private var ultrasonicCallback: ((Float)->Void)?
     private var lightnessCallback: ((Float)->Void)?
+    private var lineCallback: ((Float)->Void)? //ADDED
     
     public init(robot:MBot) {
         mBot = robot
@@ -107,6 +108,29 @@ public class BasicCommands {
             }
         }
     }
+    
+    //Line Following working but not the best solution.
+    public func subscribeLineSensor(callback:@escaping (Float)->Void){
+        lineCallback = callback
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {[weak self] (timer) in
+            self?.mBot.getLinefollowerSensorValue { (value) in
+                if (value == .LeftBlackRightBlack){
+                    self?.lineCallback!(Float(0.0))
+                }
+                else if (value == .LeftBlackRightWhite){
+                    self?.lineCallback!(Float(1.0))
+                }
+                else if (value == .LeftWhiteRightBlack){
+                    self?.lineCallback!(Float(2.0))
+                }
+                else if (value == .LeftWhiteRightWhite){
+                    self?.lineCallback!(Float(3.0))
+                }
+            }
+        }
+    }
+
+    
     
     public func getDistance(callback:@escaping (Float)->Void) {
         mBot.getUltrasonicSensorValue { (value) in

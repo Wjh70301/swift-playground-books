@@ -13,7 +13,7 @@ execiseWithViewController = { viewController in
     }
     //#-end-hidden-code
     //#-editable-code
-    func onUltrasonicSensor(value: Float) {
+    func onSensor(value: Float) {
         
         plotData(data:value)
         
@@ -31,7 +31,7 @@ execiseWithViewController = { viewController in
     
     
     viewController.setShowGraphView(show: true)
-    subscribeUltrasonicSensor(callback: onUltrasonicSensor)
+    subscribeUltrasonicSensor(callback: onSensor)
     //#-end-editable-code
     //#-hidden-code
 }

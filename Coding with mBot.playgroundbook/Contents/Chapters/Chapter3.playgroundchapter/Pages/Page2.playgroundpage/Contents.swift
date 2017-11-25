@@ -13,25 +13,15 @@ execiseWithViewController = { viewController in
     }
     //#-end-hidden-code
     //#-editable-code
-    func onUltrasonicSensor(value: Float) {
+    func onSensor(value: Float) {
         
         plotData(data:value)
         
-        if value <= 30{
-            move(speed: -100)
-            wait(time: 1)
-            move(speed: 0)
-        }
-        else if value > 31 && value <= 450{
-            move(speed: 100)
-            wait(time: 1)
-            move(speed: 0)
-        }
     }
     
     
     viewController.setShowGraphView(show: true)
-    subscribeUltrasonicSensor(callback: onUltrasonicSensor)
+    subscribeLineSensor(callback: onSensor)
     //#-end-editable-code
     //#-hidden-code
 }

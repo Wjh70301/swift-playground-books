@@ -96,6 +96,13 @@ public func subscribeLightnessSensor(callback:@escaping (Float)->Void) {
     }
 }
 
+//TEST Line Following
+public func subscribeLineSensor(callback:@escaping (Float)->Void) {
+    cmd.subscribeLineSensor { (value) in
+        callback(value)
+    }
+}
+
 public func getDistance(callback:@escaping (Float)->Void) {
     cmd.getDistance(callback: callback)
 }
