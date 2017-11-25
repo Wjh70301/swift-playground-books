@@ -18,22 +18,48 @@ public func runWithCommands() {
     PlaygroundPage.current.liveView = viewController
 }
 
-public func moveForward() {
-    cmd.forward()
+
+
+// NEW FUNCTIONS
+public func move(speed: Int){
+    cmd.move(s: speed)
 }
 
-public func moveBack() {
-    cmd.back()
+public func wait(time: Double){
+    cmd.wait(t: time)
 }
 
-public func moveLeft() {
-    cmd.left()
+public func stop(){
+    cmd.stop()
 }
 
-public func moveRight() {
-    cmd.right()
+public func turn(speed: Int){
+    cmd.turn(s: speed)
 }
+// END NEW FUNCTIONS
 
+/*
+ public func moveForward() {
+ cmd.forward()
+ }
+ 
+ public func moveBack() {
+ cmd.back()
+ }
+ 
+ public func helloWorld() {
+ cmd.helloWorld()
+ }
+ 
+ 
+ public func moveLeft() {
+ cmd.left()
+ }
+ 
+ public func moveRight() {
+ cmd.right()
+ }
+ */
 public func lightLeft(color:UIColor) {
     cmd.setRGBLED(position: .left, color: color)
 }
@@ -44,10 +70,6 @@ public func lightRight(color:UIColor) {
 
 public func lightBoth(color:UIColor) {
     cmd.setRGBLED(position: .all, color: color)
-}
-
-public func helloWorld() {
-    cmd.helloWorld()
 }
 
 public func beepDo() {
@@ -81,3 +103,4 @@ public func getDistance(callback:@escaping (Float)->Void) {
 public func getLightStrength(callback:@escaping (Float)->Void) {
     cmd.getLightStrength(callback: callback)
 }
+

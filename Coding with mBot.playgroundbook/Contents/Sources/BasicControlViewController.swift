@@ -67,7 +67,7 @@ public class BasicControlViewController: UIViewController {
         startButton.layer.borderColor = UIColor.white.cgColor
         startButton.translatesAutoresizingMaskIntoConstraints = false
         startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        startButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:-50).isActive = true
+        startButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:180).isActive = true
         startButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
         startButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         startButton.addTarget(self, action:#selector(startButtonClicked(sender:)), for:.touchUpInside)

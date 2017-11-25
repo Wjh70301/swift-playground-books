@@ -16,7 +16,7 @@ execiseCode = {
     
 //#-end-hidden-code
 //#-editable-code
-    helloWorld()
+
 //#-end-editable-code
 //#-hidden-code
     
