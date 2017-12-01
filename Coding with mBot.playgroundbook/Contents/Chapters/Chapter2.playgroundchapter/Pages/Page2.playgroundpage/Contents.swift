@@ -1,5 +1,5 @@
 /*:
- Now create functions for `turnLeft()` and `turnRight()`.  Your LED Lights should work as indicators.
+ Functions are used to create a block of sequenced steps which are frequently used.  Create function for `goForward()`.  When mBot goes forward it should turn both lights to green, they should turn red when it goes backwards.
  */
 //#-hidden-code
 
@@ -7,11 +7,11 @@ execiseCode = {
     
     //#-end-hidden-code
     //#-editable-code
-    def forward(){
-        move(speed: 100)
-        wait(time: 1)
-        stop()
+    func goForward(){
+        
     }
+    
+    goForward()
     
     //#-end-editable-code
     //#-hidden-code

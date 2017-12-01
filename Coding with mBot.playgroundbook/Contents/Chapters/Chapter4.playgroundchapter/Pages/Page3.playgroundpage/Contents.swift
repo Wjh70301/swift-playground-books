@@ -1,27 +1,39 @@
 /*:
- 
- You can use `if` command to let the robot  
- behave in different conditions.
- 
- Try tell the robot `moveForward()` when
- it is placed in the dark place.
- 
+ Task description
  */
 //#-hidden-code
 runWithCommands()
 //#-code-completion(everything, hide)
-//#-code-completion(identifier, show, moveForward(), moveBack(), moveLeft(), moveRight())
+//#-code-completion(keyword, if)
+
 execiseWithViewController = { viewController in
-//#-end-hidden-code
+    func plotData(data: Float){
+        viewController.setHintInfo(content:"Data Output:\(data)")
+        viewController.appendValue(value:Double(data))
+    }
+    //#-end-hidden-code
     
-func onLightSensor(light: Float) {
-    if light < Float(/*#-editable-code*/20.0/*#-end-editable-code*/) {
-        //#-editable-code Tell the mBot to moveForward()!
+    func onSensor(value: Float) {
+        
+        plotData(data:value)
+        //#-editable-code
+        if value <= 30{
+            move(speed: -100)
+            wait(time: 1)
+            move(speed: 0)
+        }
+        else if value > 31 && value <= 450{
+            move(speed: 100)
+            wait(time: 1)
+            move(speed: 0)
+        }
         //#-end-editable-code
     }
-}
     
-//#-hidden-code
-    subscribeLightnessSensor(callback: onLightSensor)
+    //#-hidden-code
+    viewController.setShowGraphView(show: true)
+    subscribeUltrasonicSensor(callback: onSensor)
+    
 }
 //#-end-hidden-code
+

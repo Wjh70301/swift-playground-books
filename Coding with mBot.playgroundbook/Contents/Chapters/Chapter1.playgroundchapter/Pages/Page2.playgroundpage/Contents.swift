@@ -1,5 +1,5 @@
 /*:
- Placing a negative number in the `move()` function will make the motors spin the opposite way.
+ Put the `move()` and `wait()` functions ina  sequential order to make your mBot move forward. To stop the motors set the speed to 0.
  */
 //#-hidden-code
 

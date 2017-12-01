@@ -1,5 +1,5 @@
 /*:
- Using your functions from the previous activties make your mBot travel in a square.
+ Once your function has been created you can then call it multiple times using the defined name.  Call the `goForward()` function below the function declaration.
  */
 //#-hidden-code
 
@@ -7,7 +7,7 @@ execiseCode = {
     
     //#-end-hidden-code
     //#-editable-code
-    def forward(){
+    func goForward(){
         move(speed: 100)
         wait(time: 1)
         stop()

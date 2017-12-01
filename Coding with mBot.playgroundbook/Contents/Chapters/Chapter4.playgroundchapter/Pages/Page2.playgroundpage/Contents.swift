@@ -1,29 +1,39 @@
 /*:
- 
- Try by yourself:
- Tell the robot to light up in the darkness.
- 
- Hint: 
- Make sure to use `if` clause and one of
- `lightBoth`, `lightRight`, `lightLeft`
- commands.
- 
+ Task description
  */
 //#-hidden-code
 runWithCommands()
 //#-code-completion(everything, hide)
 //#-code-completion(keyword, if)
-//#-code-completion(identifier, show, lightLeft(color:), lightRight(color:), lightBoth(color:))
+
 execiseWithViewController = { viewController in
-//#-end-hidden-code
+    func plotData(data: Float){
+        viewController.setHintInfo(content:"Data Output:\(data)")
+        viewController.appendValue(value:Double(data))
+    }
+    //#-end-hidden-code
     
-func onLightSensor(light: Float) {
-    //#-editable-code Tell the mBot to open the light in the darkness!
-    //#-end-editable-code
-}
+    func onSensor(value: Float) {
+        
+        plotData(data:value)
+        //#-editable-code
+        if value <= 30{
+            move(speed: -100)
+            wait(time: 1)
+            move(speed: 0)
+        }
+        else if value > 31 && value <= 450{
+            move(speed: 100)
+            wait(time: 1)
+            move(speed: 0)
+        }
+        //#-end-editable-code
+    }
     
-//#-hidden-code
-    subscribeLightnessSensor(callback: onLightSensor)
+    //#-hidden-code
+    viewController.setShowGraphView(show: true)
+    subscribeUltrasonicSensor(callback: onSensor)
+    
 }
 //#-end-hidden-code
 

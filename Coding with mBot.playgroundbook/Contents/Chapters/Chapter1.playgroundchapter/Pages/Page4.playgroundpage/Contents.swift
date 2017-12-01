@@ -1,5 +1,5 @@
 /*:
- Make the mBot turn the other way.
+ Use the `turn()` function to make the mBot turn left.
  */
 //#-hidden-code
 
@@ -7,9 +7,7 @@ execiseCode = {
     
     //#-end-hidden-code
     //#-editable-code
-    turn(speed: 100)
-    wait(time: 1)
-    stop()
+    
     //#-end-editable-code
     //#-hidden-code
     
@@ -18,6 +16,5 @@ execiseCode = {
 runWithCommands()
 
 //#-end-hidden-code
-
 
 
