@@ -1,5 +1,5 @@
 /*:
- Task description
+ Using the value from the ultrasonic sensor make the mBot move backwards and forward avoiding an object in front of it.
  */
 //#-hidden-code
 runWithCommands()

@@ -1,5 +1,5 @@
 /*:
- Task description
+ Place an object infront of your mBot and write a program to have the mBot avoid the obstacle.
  */
 //#-hidden-code
 runWithCommands()

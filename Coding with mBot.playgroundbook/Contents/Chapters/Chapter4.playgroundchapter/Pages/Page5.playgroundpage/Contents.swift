@@ -1,5 +1,5 @@
 /*:
- Task description
+ See the project description in the accompanying iTunes U course.  Your mBot must use a combination of the ultrasonic and line following sensor to find its way out of a complex maze.
  */
 //#-hidden-code
 runWithCommands()

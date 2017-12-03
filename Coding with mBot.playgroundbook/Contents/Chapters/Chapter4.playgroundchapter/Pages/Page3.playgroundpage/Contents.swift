@@ -1,5 +1,5 @@
 /*:
- Task description
+ Using the ultrasonic data write a program that will allow your mBot to stop exactly 15cm from a wall.
  */
 //#-hidden-code
 runWithCommands()

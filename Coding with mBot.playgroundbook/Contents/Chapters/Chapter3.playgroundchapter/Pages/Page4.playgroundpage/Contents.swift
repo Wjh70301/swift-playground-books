@@ -1,5 +1,5 @@
 /*:
- Task description
+ Using the value from the line sensor, make the mBot squeel every time it is picked up off the table.
  */
 //#-hidden-code
 runWithCommands()
@@ -12,18 +12,19 @@ execiseWithViewController = { viewController in
         viewController.appendValue(value:Double(data))
     }
     //#-end-hidden-code
-    //#-editable-code
+    
     func onSensor(value: Float) {
         
         plotData(data:value)
+        //#-editable-code
         
+        //#-end-editable-code
     }
     
-    
+    //#-hidden-code
     viewController.setShowGraphView(show: true)
     subscribeLineSensor(callback: onSensor)
-    //#-end-editable-code
-    //#-hidden-code
+    
 }
 //#-end-hidden-code
 

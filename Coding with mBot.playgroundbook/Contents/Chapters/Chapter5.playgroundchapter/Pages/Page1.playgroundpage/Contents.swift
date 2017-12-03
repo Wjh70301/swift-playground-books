@@ -1,5 +1,5 @@
 /*:
- Task description
+ Using the light sensor create make your mBot squeel when it is in the dark.
  */
 //#-hidden-code
 runWithCommands()

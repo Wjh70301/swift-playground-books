@@ -1,5 +1,6 @@
 /*:
- Task description
+ Using the line sensor make the mBot move forward until it detects the edge of the desk.
+ Be careful not to let your mBot fall!
  */
 //#-hidden-code
 runWithCommands()
@@ -12,18 +13,19 @@ execiseWithViewController = { viewController in
         viewController.appendValue(value:Double(data))
     }
     //#-end-hidden-code
-    //#-editable-code
+    
     func onSensor(value: Float) {
         
         plotData(data:value)
+        //#-editable-code
         
+        //#-end-editable-code
     }
     
-    
+    //#-hidden-code
     viewController.setShowGraphView(show: true)
     subscribeLineSensor(callback: onSensor)
-    //#-end-editable-code
-    //#-hidden-code
+    
 }
 //#-end-hidden-code
 

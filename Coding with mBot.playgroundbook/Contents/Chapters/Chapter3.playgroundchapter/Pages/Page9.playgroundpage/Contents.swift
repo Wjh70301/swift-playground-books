@@ -1,5 +1,5 @@
 /*:
- Task description
+ See the project description in the accompanying iTunes U course.  Your mBot must simulate an ambulance and get to the prescribed locations as quick as possible.
  */
 //#-hidden-code
 runWithCommands()
@@ -12,18 +12,20 @@ execiseWithViewController = { viewController in
         viewController.appendValue(value:Double(data))
     }
     //#-end-hidden-code
-    //#-editable-code
+    
     func onSensor(value: Float) {
         
         plotData(data:value)
+        //#-editable-code
         
+        //#-end-editable-code
     }
     
     
+    //#-hidden-code
     viewController.setShowGraphView(show: true)
     subscribeLineSensor(callback: onSensor)
-    //#-end-editable-code
-    //#-hidden-code
+    
 }
 //#-end-hidden-code
 

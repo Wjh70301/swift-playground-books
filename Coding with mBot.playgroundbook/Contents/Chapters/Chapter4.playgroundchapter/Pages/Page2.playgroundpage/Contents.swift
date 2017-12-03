@@ -1,5 +1,5 @@
 /*:
- Task description
+ Use a ruler to create an algorithm for converting the sensor value to a measurement.
  */
 //#-hidden-code
 runWithCommands()

@@ -1,5 +1,5 @@
 /*:
- Task description
+ Using the line sensor train your mBot to follow the M-shaped track.
  */
 //#-hidden-code
 runWithCommands()
@@ -12,18 +12,19 @@ execiseWithViewController = { viewController in
         viewController.appendValue(value:Double(data))
     }
     //#-end-hidden-code
-    //#-editable-code
+    
     func onSensor(value: Float) {
         
         plotData(data:value)
+        //#-editable-code
         
+        //#-end-editable-code
     }
     
-    
+    //#-hidden-code
     viewController.setShowGraphView(show: true)
     subscribeLineSensor(callback: onSensor)
-    //#-end-editable-code
-    //#-hidden-code
+    
 }
 //#-end-hidden-code
 
